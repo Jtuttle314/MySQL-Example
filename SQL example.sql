@@ -115,7 +115,7 @@ SELECT first_name, last_name, SUM(amount) FROM customer JOIN(payment) ON custome
 	GROUP BY first_name, last_name
     ORDER BY last_name DESC;
 
-# 7a. The music of Queen and Kris KristoffersON have seen an unlikely resurgence. As an unintended cONsequence, films starting with the letters `K` and `Q` have also soared in popularity. Use subqueries to display the titles of movies starting with the letters `K` and `Q` whose language is English. 
+# 7a. The music of Queen and Kris KristoffersON have seen an unlikely resurgence. As an unintended consequence, films starting with the letters `K` and `Q` have also soared in popularity. Use subqueries to display the titles of movies starting with the letters `K` and `Q` whose language is English. 
 SELECT title, name FROM film JOIN(language) ON film.language_id=language.language_id
 	WHERE name = 'English' AND title LIKE 'k%' or title LIKE 'q%';
 
@@ -131,7 +131,7 @@ WHERE name = 'English'
 );
     
 
-# 7b. Use subqueries to display all actors who appear in the film `AlONe Trip`.
+# 7b. Use subqueries to display all actors who appear in the film `Alone Trip`.
 SELECT title, first_name, last_name FROM actor JOIN(film_actor) ON actor.actor_id = film_actor.actor_id
 	JOIN(film) ON film_actor.film_id=film.film_id
     WHERE title ='ALONE TRIP';
@@ -151,7 +151,7 @@ FROM film
 WHERE title ='ALONE TRIP' 
 ));
 
-# 7c. You want to run an email marketing campaign in Canada, for which you will need the names and email addresses of all Canadian customers. Use JOINs to retrieve this informatiON.
+# 7c. You want to run an email marketing campaign in Canada, for which you will need the names and email addresses of all Canadian customers. Use JOINs to retrieve this information.
 SELECT first_name, last_name, email FROM customer 
 	JOIN(address) ON customer.address_id=address.address_id
     JOIN(city) ON address.city_id=city.city_id
@@ -177,7 +177,7 @@ FROM country
 WHERE country='Canada'
 )));
 
-# 7d. Sales have been lagging amONg young families, and you wish to target all family movies for a promotiON. Identify all movies categorized as famiy films.
+# 7d. Sales have been lagging among young families, and you wish to target all family movies for a promotion. Identify all movies categorized as famiy films.
 SELECT title, name AS Genre FROM film_category
 	JOIN(category) ON category.category_id=film_category.category_id
 	JOIN(film) ON film.film_id=film_category.film_id
