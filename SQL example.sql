@@ -30,7 +30,7 @@ ALTER TABLE actor
 	ADD COLUMN middle_name VARCHAR(20) AFTER first_name;
 	SELECT * FROM actor;
     
-# 3b. You realize that some of these actors have tremendously lONg last names. Change the data type of the `middle_name` column to `blobs`.
+# 3b. You realize that some of these actors have tremendously long last names. Change the data type of the `middle_name` column to `blobs`.
 ALTER TABLE actor
 	DROP middle_name,
 	ADD COLUMN middle_name BLOB AFTER first_name;
