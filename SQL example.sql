@@ -9,7 +9,7 @@ SELECT first_name, last_name FROM actor;
 SELECT UPPER(CONCAT(first_name," ",last_name))
 as Actor_Name FROM actor;
 
-# 2a. You need to find the ID number, first name, and last name of an actor, of whom you know ONly the first name, "Joe." What is ONe query would you use to obtain this informatiON?
+# 2a. You need to find the ID number, first name, and last name of an actor, of whom you know only the first name, "Joe." What is one query would you use to obtain this information?
 SELECT actor_id, first_name, last_name FROM actor
 WHERE first_name = 'Joe';
     
@@ -25,7 +25,7 @@ ORDER BY last_name, first_name;
 SELECT country_id, country FROM country
 WHERE country IN ('Afghanistan', 'Bangladesh', 'China');
     
-# 3a. Add a `middle_name` column to the table `actor`. PositiON it between `first_name` and `last_name`. Hint: you will need to specify the data type.
+# 3a. Add a `middle_name` column to the table `actor`. Position it between `first_name` and `last_name`. Hint: you will need to specify the data type.
 ALTER TABLE actor
 	ADD COLUMN middle_name VARCHAR(20) AFTER first_name;
 	SELECT * FROM actor;
@@ -47,14 +47,14 @@ SELECT last_name,
 	FROM actor 
 	GROUP BY last_name;
 
-# 4b. List last names of actors and the number of actors who have that last name, but ONly for names that are shared BY at least two actors
+# 4b. List last names of actors and the number of actors who have that last name, but only for names that are shared BY at least two actors
 SELECT last_name, 
 	COUNT(last_name) as CNT
 	FROM actor
 	GROUP BY last_name
 	Having COUNT(*) >=2;
 
-# 4c. Oh, no! The actor `HARPO WILLIAMS` was accidentally entered in the `actor` table as `GROUCHO WILLIAMS`, the name of Harpo's secONd cousin's husband's yoga teacher. Write a query to fix the record.
+# 4c. Oh, no! The actor `HARPO WILLIAMS` was accidentally entered in the `actor` table as `GROUCHO WILLIAMS`, the name of Harpo's second cousin's husband's yoga teacher. Write a query to fix the record.
 UPDATE actor
 	SET first_name = 'HARPO'
 	WHERE first_name = 'GROUCHO' AND last_name = 'Williams';
