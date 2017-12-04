@@ -17,7 +17,7 @@ WHERE first_name = 'Joe';
 SELECT actor_id, first_name, last_name 
 FROM actor WHERE INSTR(`last_name`, 'Gen');
 
-# 2c. Find all actors whose last names cONtain the letters `LI`. This time, ORDER the rows BY last name and first name, in that ORDER:
+# 2c. Find all actors whose last names contain the letters `LI`. This time, ORDER the rows BY last name and first name, in that ORDER:
 SELECT actor_id, first_name, last_name FROM actor WHERE INSTR(`last_name`, 'Li')
 ORDER BY last_name, first_name;
     
