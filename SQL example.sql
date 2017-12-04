@@ -228,5 +228,5 @@ Select*from Top_5_Genres
 # 8b. How would you display the view that you created in 8a?
 'Response to 7h & 8a contain correct formatting'
 
-# 8c. You find that you no lONger need the view `top_five_genres`. Write a query to delete it.
+# 8c. You find that you no longer need the view `top_five_genres`. Write a query to delete it.
 Drop VIEW Top_5_Genres
